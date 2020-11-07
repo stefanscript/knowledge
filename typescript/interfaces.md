@@ -1,4 +1,4 @@
- ### Interfaces
+ ## Interfaces
  One of the core principles in Typescript is that type checking focuses on the shape that the values have
  checking the shape === "duck typing" === "structural subtyping"
 

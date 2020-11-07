@@ -1,3 +1,4 @@
+## Basic Types
 ### boolean
 ```
 let isLoggedIn: boolean = true;
