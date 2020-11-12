@@ -4,7 +4,7 @@
 
 
 ### Simple example
-```
+```typescript
 function printFooTitle(foo: {title: string}): void {
     console.log(foo.title);
 }
@@ -12,7 +12,7 @@ let obj1 = {title: "Ray tracing", timestamp: 1111111};
 printFooTitle(obj1); //works compiler only checks title
 ```
 ###Same example with "interface"
-```
+```typescript
 interface TitledObj {
     title: string
 }
@@ -24,7 +24,7 @@ printFoo2Title(obj2);
 ```
 
 ### Optional Properties
-```
+```typescript
 interface Game {
     width?: number,
     height?: number
@@ -41,7 +41,7 @@ let ratio2 = getGameRatio({width: 2000, height: 900});
 
 ### Readonly properties
 #### Add `readonly` before the name of the property - makes properties modifiable when first created
-```
+```typescript
 interface Point {
     readonly x: number;
     readonly y: number;
@@ -50,7 +50,7 @@ let point: Point = {x: 10, y: 30};
 p1.x = 5; //error
 ```
 #### `ReadonlyArray<T>` the same as `Array<T>` with all mutating methods removed
-```
+```typescript
 let a: number[] = [1,2,3,4];
 let ro: ReadonlyArray<number> = a;
 ro[0] = 12; //error
@@ -64,7 +64,7 @@ a = ro as number[] // ok
 
 
 ### Excess Property Checks
-```
+```typescript
 interface SquareConfig {
   color?: string;
   width?: number;
@@ -85,7 +85,7 @@ interface SquareConfig {
 
 ### Function types
 Interfaces can describe functions too
-```
+```typescript
 interface SearchFunc {
     (source: string, subString: string): boolean;
 }
@@ -96,7 +96,7 @@ myseach = function (source: string, subString: string) {
 ```
 
 ### Indexable Types
-```
+```typescript
 interface StringArray {
     [index: number]: string; //index signature
 }
@@ -107,7 +107,7 @@ let name: string = myArray[0];
 
 ### Class Types
 Interfaces describe the public side of the class
-```
+```typescript
 interface ClockInterface {
     currentType: Date;
     setTime(d: Date): void
@@ -124,7 +124,7 @@ class Clock implements ClockInterface {
 
 ### Extending Intefaces
 Like classes, interfaces can extend each other
-```
+```typescript
 interface Color {
     color: string
 }
@@ -138,7 +138,7 @@ square.sideLength = 200;
 
 ### Hybrid Types
 Object that act as both an object and a function
-```
+```typescript
 interface Counter {
     (start: number): string;
     interval: number;
