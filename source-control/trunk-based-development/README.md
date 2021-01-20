@@ -92,4 +92,5 @@ Why? Because you might forget to push it back to trunk. Special cases where the 
 can occur so fixes on release branches can be done but steps must be taken to ensure the branch is re-merged into trunk.
 
 #### Release branches deletion
-Release branches are deleted some time after release activity from them ceases
+Release branches are deleted some time after release activity from them ceases. Not straight away but some time after 
+release.
