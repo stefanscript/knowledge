@@ -1,9 +1,9 @@
-### Trunk Based Development
+# Trunk Based Development
 
 Refs:
 [https://trunkbaseddevelopment.com/](https://trunkbaseddevelopment.com/)
 
-#### Summary
+## Summary
 
 A source-control branching model, where developers collaborate on code in a single branch called "trunk" (master or main),
 resist any pressure to create other long-lived development branches by employing documented techniques. They
@@ -12,7 +12,7 @@ therefore avoid merge hell, do not break the build.
 Very small teams can commit direct to the trunk. 
 At scale is best done with short-lived feature branches (max couple of days)
 
-#### Branch by abstraction technique
+## Branch by abstraction technique
 Branch by abstraction is a technique for "longer to complete" changes in the trunk (e.g. 5 days to complete)
 
 ##### Rules
@@ -30,7 +30,8 @@ be occasionally tweaked, but must follow the same rule - do not break the build.
 4. Remove the to-be-replaced implementation.
 5. Remove the abstraction.
 
-#### Feature Flags
+
+## Feature Flags
 
 Feature Flags allow to control the capabilities of a application in a decisive way. 
 They are meant to be short lived.
@@ -67,3 +68,28 @@ Pushing code that's turned off into production, allows you to turn it on for eph
 Flags get put into applications but get forgotten, when they should be cleaned up after a while. The is also 
 the fact that the app works just fine with the flags in place, the business only cares about the next priorities/features. 
 
+
+## Branch for releases
+
+- Created from trunk (master) just before deployment (just in time basis)
+- Should not receive continued development work
+- Can receive cherry picked merges from trunk
+- Continuous Delivery teams (high output) release from trunk, 
+if fixes are required they are pushed from trunk (they choose a roll-forward strategy for solving it);
+ they don't release from release branches,
+ 
+#### Late creation of release branches
+Some teams release from a tag on the trunk and do not create a branch at that time. 
+Branches can be created retroactively (with effect from a date in the past).
+
+#### Fix production bugs on Trunk
+The best practice for trunk based development is to reproduce the bug on the trunk, write a test and fix it,
+have it verified on the CI server, cherry pick that to the release branch have the CI server verity that too.
+Note: a cherry pick merge is not a regular one.
+##### Cherry-picks from the trunk to branch ONLY
+Bugs should be fixed on trunk and cherry picked to release branches. They should not be fixed on release branches.
+Why? Because you might forget to push it back to trunk. Special cases where the bug can't be replicated on trunk
+can occur so fixes on release branches can be done but steps must be taken to ensure the branch is re-merged into trunk.
+
+#### Release branches deletion
+Release branches are deleted some time after release activity from them ceases
