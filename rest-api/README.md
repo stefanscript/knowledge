@@ -18,5 +18,5 @@ HTTP request already have verbs:
 Examples:
 GET `/articles` to get news articles
 POST `/articles` to add a new article
-
+PUT /articles/:id for updating the article with a given id
 
