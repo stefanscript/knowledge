@@ -19,4 +19,9 @@ Examples:
 GET `/articles` to get news articles
 POST `/articles` to add a new article
 PUT /articles/:id for updating the article with a given id
+DELETE /articles/:id for deleting the article with a given id
+
+## Use logical nesting on endpoints
+It's good practice to group endpoints that are associated.
+Example GET `/articles/:articleId/comments` to get the comments of an article
 
