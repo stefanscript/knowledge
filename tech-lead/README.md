@@ -14,3 +14,4 @@ productivity multipliers (e.g. dev ops related, onboarding where needed - new me
 
 dedicate time to stay relevant (learn about redux toolkit, learn on repository pattern, micro frontends) -    1hr every day?
 
+protect your time (look at the Tech Lead schedule as a ref) negotiate blocks of time to do your job
