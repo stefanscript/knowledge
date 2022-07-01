@@ -4,7 +4,7 @@
   
         git log --all --full-history -- "**/thefile.*"
 
-### Purge big files or credentila from history
+### Purge big files or secrets from history
 
 https://docs.gitlab.com/ee/user/project/repository/reducing_the_repo_size_using_git.html#repository-cleanup
 
